@@ -1,0 +1,27 @@
+﻿@model WebApp1.Models.InstructorViewModel
+@{
+    ViewData["Title"] = "ShowDetails";
+}
+
+<h1>ShowDetails</h1>
+
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="/images/@Model.Image" class="img-fluid rounded-start" alt="@Model.Name">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"> Name:@Model.Name</h5>
+               <h3 class="card-text"> Id:@Model.Id</h3>
+                <p class="card-text">Salary:@Model.Salary</p>
+                <p class="card-text">Address:@Model.Address</p>
+                <p class="card-text">CoursName:@Model.CoursName</p>
+                <p class="card-text">DepartmentName:@Model.DepName</p>
+            </div>
+            <a href="/Instructors/showAll" class="btn btn-primary" >Back to List </a>
+
+        </div>
+    </div>
+</div>
