@@ -1,0 +1,55 @@
+﻿@model List<WebApp1.Models.CourseViewModel>
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1> Show All Courses</h1>
+
+
+<table class="table accept-policy table-hover table-bordered table-striped ">
+
+    <tr>
+        <th>Trainne Name</th>
+        <th> Course Name</th>
+        <th>Image</th>
+        <th>Degree</th>
+        <th>Status</th>
+        
+    </tr>
+    @if (Model != null)
+    {
+        @foreach (var item in Model) 
+        {
+            @if(item.Status == "Pass")
+            {
+                <tr style="background-color: green">
+                    <td>@item.TraineeName</td>
+                    <td>@item.CourseName</td>
+                    <td><img src="/images/@item.Image" width="50" height="50" /></td>
+                    <td>@item.Degree</td>
+                    <td>@item.Status</td>
+                    
+                </tr>
+            }
+            else{
+                <tr style="background-color: red">
+                    <td>@item.TraineeName</td>
+                    <td>@item.CourseName</td>
+                    <td><img src="/images/@item.Image" width="50" height="50" /></td>
+                    <td>@item.Degree</td>
+                    <td>@item.Status</td>
+                    
+                </tr>
+            }
+     
+        }
+    }
+    @if (Model == null)
+    {
+        <tr>
+            <td colspan="7">No Data</td>
+        </tr>
+    }
+
+
+</table>

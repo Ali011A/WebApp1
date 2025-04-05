@@ -1,0 +1,42 @@
+﻿@model WebApp1.Models.TraineeViewModel
+@{
+    ViewData["Title"] = "Result";
+}
+
+
+
+<h1>Result</h1>
+
+<div class="card mb-3" style="max-width: 540px;">
+<div class="row g-0">
+    <div class="col-md-4">
+        <img src="/images/@Model.Image" class="img-fluid rounded-start" alt="@Model.TraineeName">
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+            @if(Model.Status== "Pass")
+            {
+                <h5 class="card-title" style="color:green" >Trainee Name:@Model.TraineeName</h5>
+                <h3 class="card-text" style="color:green">Course Name:@Model.CourseName</h3>
+                <p class="card-text" style="color:green">Degree:@Model.Degree</p>
+                <p class="card-text" style="color:green">Status:@Model.Status</p>
+               
+
+            }
+            else
+            {
+                <h5 class="card-title" style="color:red">Trainee Name:@Model.TraineeName</h5>
+                <h3 class="card-text" style="color:red">Course Name:@Model.CourseName</h3>
+                <p class="card-text" style="color:red">Degree:@Model.Degree</p>
+                <p class="card-text" style="color:red">Status:@Model.Status</p>
+                
+            }
+           
+            <a href="/" class="btn btn-primary">Back to Home </a>
+        
+
+    </div>
+</div>
+</div>
+</div>
+
