@@ -12,22 +12,27 @@
     <div class="mb-3">
         <label asp-for="CourseName"></label>
         <input asp-for="CourseName" class="form form-control" />
+        <span asp-validation-for="CourseName" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
 
         <label asp-for="Degree"></label>
         <input asp-for="Degree" class="form form-control" />
+        
+        <span asp-validation-for="Degree" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="minDegree"></label>
         <input asp-for="minDegree" class="form form-control" />
+        <span asp-validation-for="minDegree" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="hours"></label>
         <input asp-for="hours" class="form form-control" />
+        <span asp-validation-for="hours" class="text-danger"></span>
     </div>
     <div class="mb-3">
         
@@ -35,9 +40,12 @@
         <select class="form form-control" asp-for="DepartmentId" asp-items="depOption">
     <option value="0">select Department</option>
 </select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
     </div>
     <input type="submit" value="Save" class="btn btn-success"/>
 
 </form>
 
-
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

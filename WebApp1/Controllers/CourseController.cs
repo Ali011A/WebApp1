@@ -52,6 +52,32 @@ namespace WebApp1.Controllers
             return View("AllCourses", courses.ToList());
 }
 
+        //check minDegree using ajax  
+        public IActionResult CheckDegree(int minDegree)
+        {
+            if (minDegree >= 50)
+            {
+                return Json("true");
+            }
+            else
+            {
+                return Json("false");
+            }
+
+        }
+        //check Degree Nag using ajax
+        public IActionResult CheckDegreeNagative(int Degree)
+        {
+            if (Degree > 0)
+            {
+                return Json("true");
+            }
+            else
+            {
+                return Json("false");
+            }
+        }
+
         #region AddCourse
         // Endpoint url : /Course/AddCourses
         public IActionResult AddCourses()
@@ -61,6 +87,7 @@ namespace WebApp1.Controllers
             return View("AddCourses", courses);
 
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

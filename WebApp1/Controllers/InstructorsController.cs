@@ -77,6 +77,7 @@ namespace WebApp1.Controllers
         public IActionResult SaveInstructor(InstructorViewModel ins)
         {
         
+            //if(ModelState.IsValid==true)
             // Check if the instructor has valid data
             if (ins.Name != null && ins.Image != null && ins.Salary > 7000 && ins.Address 
                 != null && ins.CourseId != 0 && ins.DepartmentId != 0)
